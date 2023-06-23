@@ -1,3 +1,5 @@
+import PageTitle from "../components/PageTitle";
+
 export default function IndexPage() {
-  return <div>Home</div>;
+  return <PageTitle title="The New York Times Best Seller Explorer" />;
 }
