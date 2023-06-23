@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 export default function Nav() {
   return (
     <>
-      <span>Home</span>
-      <span>About</span>
+      <Link href="/">Home</Link>
+      <Link href="/about">About</Link>
     </>
   );
 }
