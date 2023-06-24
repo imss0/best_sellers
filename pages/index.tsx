@@ -1,13 +1,14 @@
 import { GetServerSideProps } from "next";
 import PageTitle from "../components/PageTitle";
-import CategoryTitle from "../components/CategoryTitle";
+import CategoryTitle from "../components/ClickBtn";
+import PageContainer from "../components/PageContainer";
 
 interface BestSellerCategoryList {}
 
 export default function IndexPage({ bestSellerCategoryList }) {
   const list = bestSellerCategoryList.results;
   return (
-    <>
+    <PageContainer>
       <PageTitle title="The New York Times Best Seller Explorer" />
       {list.map((item) => (
         <CategoryTitle
@@ -16,7 +17,7 @@ export default function IndexPage({ bestSellerCategoryList }) {
           url={item.list_name_encoded}
         />
       ))}
-    </>
+    </PageContainer>
   );
 }
 

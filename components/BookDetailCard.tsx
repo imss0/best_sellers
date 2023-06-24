@@ -1,25 +1,29 @@
-import Link from "next/link";
 import styled from "styled-components";
+import ClickBtn from "./ClickBtn";
 
 export const BookDetailContainer = styled.div`
-  width: 250px;
-  height: 500px;
-  border: 1px solid black;
+  width: 200px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
+export const BookImage = styled.img`
+  width: 150px;
+  height: 200px;
+`;
+
+export const BookTitle = styled.h3``;
+
 export default function BookDetailCard({ imgUrl, shopUrl, title, author }) {
   return (
     <>
       <BookDetailContainer>
-        <img src={imgUrl} />
-        <h3>{title}</h3>
+        <BookImage src={imgUrl} />
+        <BookTitle>{title}</BookTitle>
         <p>{author}</p>
-        <a href={shopUrl} target="_blank">
-          <button>Buy now</button>
-        </a>
+        <ClickBtn url={shopUrl} title={"Buy now"}></ClickBtn>
       </BookDetailContainer>
     </>
   );

@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next";
 import BookDetailCard from "../../components/BookDetailCard";
+import BooksContainer from "../../components/BooksContainer";
 
 interface CategoryBookList {}
 
@@ -8,15 +9,17 @@ export default function BookDetail({ categoryBookList }) {
   return (
     <>
       <h2>{categoryBookList.results.display_name}</h2>
-      {books.map((item) => (
-        <BookDetailCard
-          key={item.rank + item.title}
-          imgUrl={item.book_image}
-          shopUrl={item.amazon_product_url}
-          title={item.title}
-          author={item.author}
-        />
-      ))}
+      <BooksContainer>
+        {books.map((item) => (
+          <BookDetailCard
+            key={item.rank + item.title}
+            imgUrl={item.book_image}
+            shopUrl={item.amazon_product_url}
+            title={item.title}
+            author={item.author}
+          />
+        ))}
+      </BooksContainer>
     </>
   );
 }
