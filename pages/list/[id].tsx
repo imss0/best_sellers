@@ -1,14 +1,16 @@
 import { GetServerSideProps } from "next";
 import BookDetailCard from "../../components/BookDetailCard";
 import BooksContainer from "../../components/BooksContainer";
+import PageContainer from "../../components/PageContainer";
+import PageTitle from "../../components/PageTitle";
 
 interface CategoryBookList {}
 
 export default function BookDetail({ categoryBookList }) {
   const books = categoryBookList.results.books;
   return (
-    <>
-      <h2>{categoryBookList.results.display_name}</h2>
+    <PageContainer>
+      <PageTitle title={categoryBookList.results.display_name} />
       <BooksContainer>
         {books.map((item) => (
           <BookDetailCard
@@ -20,7 +22,7 @@ export default function BookDetail({ categoryBookList }) {
           />
         ))}
       </BooksContainer>
-    </>
+    </PageContainer>
   );
 }
 
