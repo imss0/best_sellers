@@ -1,4 +1,4 @@
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import PageTitle from "../components/PageTitle";
 import CategoryTitle from "../components/ClickBtn";
 import PageContainer from "../components/PageContainer";
@@ -25,7 +25,7 @@ export default function IndexPage({ bestSellerCategoryList }) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps<{
+export const getStaticProps: GetStaticProps<{
   bestSellerCategoryList: CategoryList;
 }> = async () => {
   try {
