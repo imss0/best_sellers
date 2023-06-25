@@ -12,9 +12,14 @@ const NavContainer = styled.div`
   justify-content: space-between;
   padding: 10px;
   z-index: 1;
+  background-color: #f2f2f0;
+  position: fixed;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  top: 0;
 `;
 
-const NavText = styled.span<NavTextProps>`
+const NavText = styled.div<NavTextProps>`
   font-weight: 600;
   font-size: 24px;
   padding: 10px;
